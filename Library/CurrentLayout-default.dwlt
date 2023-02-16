@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 16
+  controlID: 130
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 17
+  controlID: 62
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 18
+  controlID: 63
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -325,10 +325,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -286
-    m_HBaseRangeMax: 286
-    m_VBaseRangeMin: -161
-    m_VBaseRangeMax: 161
+    m_HBaseRangeMin: -305
+    m_HBaseRangeMax: 305
+    m_VBaseRangeMin: -171.5
+    m_VBaseRangeMax: 171.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -345,11 +345,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 754
-      height: 322
+      height: 343
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 377, y: 161}
+    m_Translation: {x: 377, y: 171.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -357,9 +357,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -377
-      y: -161
+      y: -171.5
       width: 754
-      height: 322
+      height: 343
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 754, y: 343}
@@ -397,20 +397,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 78490000
-      m_LastClickedID: 18808
-      m_ExpandedIDs: 76f2ffff6afbffff
+      m_SelectedIDs: 3c3f0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1abafdffeebafdffa469ffffb076ffff22f6ffff6afbffffbc340000404900002e5b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: doorway6 (1)
-        m_OriginalName: doorway6 (1)
+        m_Name: mushroom-magical-amanita-baby (10)
+        m_OriginalName: mushroom-magical-amanita-baby (10)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -3468
+        m_UserData: -42548
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -459,9 +459,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 22.91, y: 6.4430003, z: -14.000004}
+    m_Target: {x: -159.28209, y: 18.306734, z: 61.258137}
     speed: 2
-    m_Value: {x: 22.91, y: 6.4430003, z: -14.000004}
+    m_Value: {x: -157.91696, y: 17.764755, z: 59.089314}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -507,13 +507,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.37309715, y: 0.132247, z: -0.05337428, w: 0.9168806}
+    m_Target: {x: -0.2661037, y: 0.68830043, z: -0.304675, w: -0.6023775}
     speed: 2
-    m_Value: {x: 0.37305805, y: 0.13223314, z: -0.053368688, w: 0.9167845}
+    m_Value: {x: -0.26380816, y: 0.69002783, z: -0.30296588, w: -0.6020618}
   m_Size:
-    m_Target: 23.19474
+    m_Target: 65.422585
     speed: 2
-    m_Value: 23.19474
+    m_Value: 62.605347
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -718,20 +718,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Higher_Nitec_Year_2\Game Integration Testing\Project\06_Erina_Tiffany_Siyin_projectgroup
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 563f0000
-    m_LastClickedID: 16214
-    m_ExpandedIDs: 000000004c3f00004e3f0000503f0000523f0000543f0000563f000000ca9a3b
+    scrollPos: {x: 0, y: 138}
+    m_SelectedIDs: 36360000
+    m_LastClickedID: 13878
+    m_ExpandedIDs: 000000001e360000203600002236000024360000263600002836000032360000e239000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -759,7 +759,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c3f00004e3f0000503f0000523f0000543f0000563f0000
+    m_ExpandedIDs: 000000001e3600002036000022360000243600002636000028360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
