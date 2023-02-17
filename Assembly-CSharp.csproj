@@ -71,6 +71,7 @@
     <Compile Include="Assets\Erina\Eri_gemcollector.cs" />
     <Compile Include="Assets\Erina\Eri_playerscript.cs" />
     <Compile Include="Assets\Erina\Eri_topdowncam.cs" />
+    <None Include="Assets\Tower Defence\Shaders\Double Side.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
