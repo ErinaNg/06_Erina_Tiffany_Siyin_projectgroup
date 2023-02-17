@@ -10,8 +10,9 @@ public class TutorialKnightScript : MonoBehaviour
     public static TutorialKnightScript TutorialKnightCode;
     public GameObject Halo;
     private Animator animator;
-    public GameObject Destination;
+    private Vector3 Destination;
     public GameObject FoodTray;
+    public float DestinationTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,19 +21,28 @@ public class TutorialKnightScript : MonoBehaviour
         IsActive = true;
         TutorialKnightCode = this;
         FoodTray.active = false;
+        DestinationTimer = 0;
     }
 
     public void KnightWalksToDestination()
     {
-        navMeshAgent.SetDestination(Destination.transform.position);
+        float DestinationZ = -8.63f;
+        float DestinationX = 23.98f;
+        Destination = new Vector3(DestinationX, transform.position.y, DestinationZ);
+        Vector3 distanceToDestination = transform.position - Destination;
+        navMeshAgent.SetDestination(Destination);
         animator.SetBool("EnemyRunning", true);
 
-        Vector3 distanceToDestination = transform.position - Destination.transform.position;
-        if (distanceToDestination.magnitude < 1f)
+        if(distanceToDestination.magnitude <= 1f )
         {
-            animator.SetBool("EnemyRunning", false);
-            FoodTray.active = true;
+            StopMoving();
         }
+    }
+
+    void StopMoving()
+    {
+        animator.SetBool("EnemyRunning", false);
+        FoodTray.active = true;
     }
 
     void Update()
@@ -46,6 +56,12 @@ public class TutorialKnightScript : MonoBehaviour
         {
             animator.SetBool("EnemyIsActive", false);
             Halo.active = true;
+        }
+        DestinationTimer += Time.deltaTime;
+
+        if (DestinationTimer >= 8f)
+        {
+            StopMoving();
         }
     }
 }

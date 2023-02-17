@@ -453,7 +453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198382110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.98, y: -0.1, z: -8.63}
+  m_LocalPosition: {x: 23.98, y: 0.05007973, z: -8.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2701,6 +2701,21 @@ PrefabInstance:
       propertyPath: FoodTray
       value: 
       objectReference: {fileID: 1017392971}
+    - target: {fileID: 1419606920802650624, guid: f4148751440b52b4e8514b2baab15b80,
+        type: 3}
+      propertyPath: Destination.x
+      value: 23.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419606920802650624, guid: f4148751440b52b4e8514b2baab15b80,
+        type: 3}
+      propertyPath: Destination.y
+      value: 0.05007973
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419606920802650624, guid: f4148751440b52b4e8514b2baab15b80,
+        type: 3}
+      propertyPath: Destination.z
+      value: -8.63
+      objectReference: {fileID: 0}
     - target: {fileID: 2745886685238037954, guid: f4148751440b52b4e8514b2baab15b80,
         type: 3}
       propertyPath: m_LocalPosition.x
