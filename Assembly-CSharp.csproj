@@ -67,6 +67,7 @@
     <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\EriPlayerController.cs" />
     <Compile Include="Assets\Eri_malechara.cs" />
+    <Compile Include="Assets\Erina\Eri_RestartScene.cs" />
     <Compile Include="Assets\Erina\Eri_gemcollector.cs" />
     <Compile Include="Assets\Erina\Eri_playerscript.cs" />
     <Compile Include="Assets\Erina\Eri_topdowncam.cs" />

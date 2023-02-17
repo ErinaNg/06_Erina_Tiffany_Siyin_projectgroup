@@ -17,6 +17,7 @@ public class Eri_gemcollector : MonoBehaviour
     private bool GameOverIsPlayed = false;
 
     [SerializeField] private AudioSource collectSound;
+    [SerializeField] private AudioSource popSound;
     [SerializeField] private AudioSource deathSound;
 
     public GameObject GameOverUI;
@@ -24,7 +25,9 @@ public class Eri_gemcollector : MonoBehaviour
     public GameObject PauseMenu;
     public AudioClip GameWinSound;
     public AudioClip GameLoseSound;
-    public AudioSource audioSource;
+    private AudioSource audioSource;
+    public GameObject replay;
+
 
     // Start is called before the first frame update
 
@@ -33,6 +36,7 @@ public class Eri_gemcollector : MonoBehaviour
         GameOverUI.SetActive(false);
         GameWinUI.SetActive(false);
         PauseMenu.SetActive(false);
+        replay.SetActive(false);
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -47,7 +51,9 @@ public class Eri_gemcollector : MonoBehaviour
         TimerText.text = "Timer: " + TimerSeconds.ToString();
         if (Timer >= 60 && gem < 8)
         {
-            SceneManager.LoadScene("GameLose");
+            GameOverUI.SetActive(true);
+            replay.SetActive(true);
+            // SceneManager.LoadScene("GameLose"); use UI
         }
     }
 
@@ -80,14 +86,15 @@ public class Eri_gemcollector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Coin")
+        if (other.gameObject.tag == "Gem")
         {
             collectSound.Play();
+            popSound.Play();
             Destroy(other.gameObject);
             gem = gem + 1;
-            gemText.text = "CoinScore: " + gem.ToString();
+            gemText.text = "Gem Count: " + gem.ToString();
             Instantiate(gemParticle, gameObject.transform.position, Quaternion.identity);
-            Destroy(GameObject.FindGameObjectWithTag("Particle"), 2);
+            Destroy(GameObject.FindGameObjectWithTag("Confetti"), 2);
 
 
         }
@@ -102,7 +109,7 @@ public class Eri_gemcollector : MonoBehaviour
             //SceneManager.LoadScene("GameLose");
         }
 
-        if (other.gameObject.tag == "Goal")
+        if (other.gameObject.tag == "Goal")  //goal is the door to escape
         {
             if (gem >= 100)       //Win // Add another && OnCollision with end goal then win
             {
@@ -114,7 +121,7 @@ public class Eri_gemcollector : MonoBehaviour
 
     void OnCollisionEnter(Collision otherObj)
     {
-        if (otherObj.gameObject.tag == "Particle")
+        if (otherObj.gameObject.tag == "Confetti")
         {
             Destroy(gameObject, .5f);
         }
