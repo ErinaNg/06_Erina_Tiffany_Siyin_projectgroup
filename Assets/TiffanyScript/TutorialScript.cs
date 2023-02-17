@@ -7,20 +7,19 @@ public class TutorialScript : MonoBehaviour
 {
     public Text NarratorText;
     public GameObject TutorialKnight;
-    public GameObject FoodTray;
     // Start is called before the first frame update
     void Start()
     {
-        FoodTray.active = false;
         NarratorText.text = "Hello Timmy II! It seems you are in prison, like usual.";
-        Invoke("KnightShowUpText", 3.0f);
+        Invoke("KnightShowUpText", 3.5f);
     }
 
     void KnightShowUpText()
     {
-        NarratorText.text = "Oh Look the knight here to give your your daily lunch.";
-        
+        NarratorText.text = "Oh Look! The knight here to give your your daily lunch.";
+        TutorialKnightScript.TutorialKnightCode.KnightWalksToDestination();
     }
+
 
     // Update is called once per frame
     void Update()
