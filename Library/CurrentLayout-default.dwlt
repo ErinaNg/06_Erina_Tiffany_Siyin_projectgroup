@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 139
+  controlID: 88
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 62
+  controlID: 89
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 63
+  controlID: 38
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -396,24 +396,24 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 5}
       m_SelectedIDs: ee340000
       m_LastClickedID: 13550
-      m_ExpandedIDs: 6afbffffdc340000
+      m_ExpandedIDs: 68fbffff6afbffffcc33000066340000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Camera (1)
-        m_OriginalName: Camera (1)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 13322
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -459,9 +459,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 22.624271, y: 3.9543629, z: -10.054392}
+    m_Target: {x: 29.904955, y: 4.0361958, z: -6.75697}
     speed: 2
-    m_Value: {x: 22.624271, y: 3.9543629, z: -10.054392}
+    m_Value: {x: 29.904955, y: 4.0361958, z: -6.75697}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -507,13 +507,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.64996797, y: 0.010377398, z: -0.007528274, w: 0.7601654}
+    m_Target: {x: 0.5353465, y: -0.015272754, z: 0.010882458, w: 0.844708}
     speed: 2
-    m_Value: {x: 0.64981395, y: 0.010374939, z: -0.0075264904, w: 0.75998527}
+    m_Value: {x: 0.53521824, y: -0.015269096, z: 0.010879851, w: 0.84450567}
   m_Size:
-    m_Target: 8.93013
+    m_Target: 6.4104753
     speed: 2
-    m_Value: 8.93013
+    m_Value: 6.4104753
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -923,7 +923,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 100
+  m_LastVerticalScrollValue: 0
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52

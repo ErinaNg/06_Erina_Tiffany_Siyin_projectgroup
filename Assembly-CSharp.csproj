@@ -64,7 +64,6 @@
      <Compile Include="Assets\TiffanyScript\BossScript.cs" />
      <Compile Include="Assets\TiffanyScript\FieldOfViewEditior.cs" />
      <Compile Include="Assets\TiffanyScript\TutorialKnightScript.cs" />
-     <Compile Include="Assets\TiffanyScript\TutorialScript.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
