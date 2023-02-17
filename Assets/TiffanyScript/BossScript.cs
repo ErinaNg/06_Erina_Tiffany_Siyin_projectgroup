@@ -27,7 +27,7 @@ public class BossScript : MonoBehaviour
     public Vector3 WalkPoint;
     bool WalkPointSet;
     public float WalkPointRange;
-
+    public float WalkPointTimer;
     //HearPlayerLocation
     public Vector3 SoundPoint;
 
@@ -38,13 +38,21 @@ public class BossScript : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        PlayerTransform = GameObject.Find("Player").transform;
+        PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         StartCoroutine(FOVRoutine());
         IsActive = true;
         IfAttackPlayer = false;
         Halo.active = false;
+        WalkPointTimer = 0;
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //WalkPointTimeis for if the AI were to be stuck for about 3 seconds change walkpoint
+        WalkPointTimer += Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -62,7 +70,6 @@ public class BossScript : MonoBehaviour
             animator.SetBool("EnemyIsActive", false);
             Halo.active = true;
             Invoke("GetUPIn8seconds", 8.0f);
-
         }
     }
 
@@ -112,14 +119,26 @@ public class BossScript : MonoBehaviour
             animator.SetBool("EnemyRunning", true);
             IfAttackPlayer = false;
 
-            //Walkpoint reached
+            //Walkpoint reached 
             if (distanceToWalkPoint.magnitude < 1f)
             {
-                WalkPointSet = false;
-                IfAttackPlayer = false;
-                animator.SetBool("EnemyRunning", false);
-            }  
+                CannotReachWalkPointOrCompletedWalkPoint();
+            }
+
+            //If it cannot reach walkpoint
+            if (distanceToWalkPoint.magnitude > 1f && WalkPointTimer >= 3.5f)
+            {
+                CannotReachWalkPointOrCompletedWalkPoint();
+            }
         }
+    }
+
+    void CannotReachWalkPointOrCompletedWalkPoint()
+    {
+        WalkPointTimer = 0;
+        WalkPointSet = false;
+        IfAttackPlayer = false;
+        animator.SetBool("EnemyRunning", false);
     }
 
     private void SearchWalkPoint()
@@ -152,10 +171,11 @@ public class BossScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacles" || collision.gameObject.tag == "Boss")
         {
-            WalkPointSet = false;
-            Patroling(); 
+            CannotReachWalkPointOrCompletedWalkPoint();
         }
     }
+
+
 
     private IEnumerator FOVRoutine()
     {
