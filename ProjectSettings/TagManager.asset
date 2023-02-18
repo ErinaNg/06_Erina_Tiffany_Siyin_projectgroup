@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Obstacles
   - Door
+  - Boss
+  - Sword
+  - Tutorial
+  - Teleporter
   layers:
   - Default
   - TransparentFX
