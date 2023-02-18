@@ -20,6 +20,6 @@ public class Eri_RestartScene : MonoBehaviour
 
     public void OnRestartLevel()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Lvl1");
     }
 }
