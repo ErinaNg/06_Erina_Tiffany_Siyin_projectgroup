@@ -9,7 +9,9 @@ TagManager:
   - Boss
   - Sword
   - Tutorial
-  - Teleporter
+  - Teleporter1
+  - Teleporter2
+  - Gate
   layers:
   - Default
   - TransparentFX
