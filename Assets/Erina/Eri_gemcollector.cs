@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class Eri_gemcollector : MonoBehaviour
+public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
 {
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Pause = !Pause;
+    }
     public float gem;
     public Text gemText;
-    public float Timer;
-    public Text TimerText;
-    public float TimerSeconds;
+    [SerializeField] private Image uiFill;
+    [SerializeField] private Text TimerText;
+    public int Duration;
+    private int remainDuration;
+    private bool Pause;
     public GameObject gemParticle;
     public bool isGameOver;
     public static bool IsWinShown;
@@ -27,10 +34,40 @@ public class Eri_gemcollector : MonoBehaviour
     public AudioClip GameLoseSound;
     private AudioSource audioSource;
     public GameObject replay;
-
+    private Animator anim;
 
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        Being(Duration);
+        anim = GetComponentInChildren<Animator>();
+    }
+    private void Being(int Second)
+    {
+        remainDuration = Second;
+        StartCoroutine(UpdateTimer());
+    }
+
+    private IEnumerator UpdateTimer()
+    {
+        while(remainDuration >= 0)
+        {
+            if(!Pause)
+            {
+                TimerText.text = $"{remainDuration / 60:00} : {remainDuration % 60:00}";
+                uiFill.fillAmount = Mathf.InverseLerp(0, Duration, remainDuration);
+                remainDuration--;
+                yield return new WaitForSeconds(1f);
+            }
+            yield return null;
+        }
+        OnEnd();
+    }
+    private void OnEnd()
+    {
+        print("End");
+    }
     void Awake()
     {
         GameOverUI.SetActive(false);
@@ -46,10 +83,10 @@ public class Eri_gemcollector : MonoBehaviour
         if (isGameOver)
             return;
 
-        Timer = Timer + Time.deltaTime;
-        TimerSeconds = Mathf.FloorToInt(Timer % 60);
-        TimerText.text = "Timer: " + TimerSeconds.ToString();
-        if (Timer >= 60 && gem < 8)
+        //Timer = Timer + Time.deltaTime;
+        //TimerSeconds = Mathf.FloorToInt(Timer % 60);
+        //TimerText.text = "Timer: " + TimerSeconds.ToString();
+        if (remainDuration <= 0 && gem < 8)
         {
             GameOverUI.SetActive(true);
             replay.SetActive(true);
@@ -92,7 +129,8 @@ public class Eri_gemcollector : MonoBehaviour
             popSound.Play();
             Destroy(other.gameObject);
             gem = gem + 1;
-            gemText.text = "Gem Count: " + gem.ToString();
+            gemText.text = "Gem Count: " + gem.ToString();  //collect a gem plus 10seconds to timer
+            remainDuration += 10;
             Instantiate(gemParticle, gameObject.transform.position, Quaternion.identity);
             Destroy(GameObject.FindGameObjectWithTag("Confetti"), 2);
 
@@ -111,9 +149,12 @@ public class Eri_gemcollector : MonoBehaviour
 
         if (other.gameObject.tag == "Goal")  //goal is the door to escape
         {
-            if (gem >= 100)       //Win // Add another && OnCollision with end goal then win
+            if (gem >= 8)       //Win // Add another && OnCollision with end goal then win
             {
-               // SceneManager.LoadScene("GameWin");
+                anim.SetTrigger("Win");
+                GameWinUI.SetActive(true);
+                replay.SetActive(true);
+                SceneManager.LoadScene("Lvl2");
             }
         }
 
