@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Obstacles
-  - Door
-  - Boss
-  - Sword
-  - Tutorial
-  - Teleporter1
-  - Teleporter2
-  - Gate
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -21,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - WhatIsPlayer
-  - Ground
-  - Obstacles
+  - 
+  - 
+  - 
   - 
   - 
   - 
