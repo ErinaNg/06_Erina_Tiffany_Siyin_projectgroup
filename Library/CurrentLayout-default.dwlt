@@ -96,7 +96,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 34
+  controlID: 172
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 35
+  controlID: 61
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -214,8 +214,8 @@ MonoBehaviour:
     y: 0
     width: 276
     height: 635
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -441,23 +441,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c49effff
-      m_LastClickedID: -24892
-      m_ExpandedIDs: 08befffff0bfffff06c0ffff9ec2ffff56f0ffff6afbffffb2570000
+      m_SelectedIDs: 8c310000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Teleporter
-        m_OriginalName: Teleporter
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -24692
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -544,20 +544,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/TiffanyScript/Animation
+    - Assets/TiffanyScript/Script
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/TiffanyScript/Animation
+  - Assets/TiffanyScript/Script
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Higher_Nitec_Year_2\Game Integration Testing\Project\06_Erina_Tiffany_Siyin_projectgroup
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0cc80000
-    m_LastClickedID: 51212
-    m_ExpandedIDs: 00000000ae370000b0370000b2370000b4370000b6370000b8370000ba370000bc370000be370000c037000000ca9a3b
+    m_SelectedIDs: 8c470000
+    m_LastClickedID: 18316
+    m_ExpandedIDs: 000000004a4700004c4700004e47000050470000524700005447000056470000584700005a4700005c47000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -585,7 +585,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae370000b0370000b2370000b4370000b6370000b8370000ba370000bc370000be370000c0370000
+    m_ExpandedIDs: 000000004a4700004c4700004e47000050470000524700005447000056470000584700005a4700005c470000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -819,11 +819,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.43176764, y: 0.55775905, z: -0.4238797, w: 0.56823033}
     speed: 2
-    m_Value: {x: 0.43089804, y: 0.5583725, z: -0.423026, w: 0.56885505}
+    m_Value: {x: 0.43175077, y: 0.55773723, z: -0.42386314, w: 0.5682081}
   m_Size:
-    m_Target: 14.939155
+    m_Target: 17.746174
     speed: 2
-    m_Value: 15.643094
+    m_Value: 17.746174
   m_Ortho:
     m_Target: 0
     speed: 2

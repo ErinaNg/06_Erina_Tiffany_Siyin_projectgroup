@@ -8,7 +8,6 @@ public class TutorialKnightScript : MonoBehaviour
 {
     public static bool IsActive;
     private NavMeshAgent navMeshAgent;
-    public static TutorialKnightScript TutorialKnightCode;
     public GameObject Halo;
     private Animator animator;
     public GameObject FoodTray;
@@ -27,7 +26,7 @@ public class TutorialKnightScript : MonoBehaviour
     public float SlightRadius;
     public float HearRadius;
     public float AttackRadius;
-
+    private bool CanSeePlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +35,6 @@ public class TutorialKnightScript : MonoBehaviour
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         IsActive = true;
-        TutorialKnightCode = this;
         FoodTray.active = false;
         DestinationTimer = 0;
         NarratorText.text = "Hello Timmy II! It seems you are in prison, like usual. Press WASD to move around.";
@@ -48,11 +46,6 @@ public class TutorialKnightScript : MonoBehaviour
     void KnightShowUpText()
     {
         NarratorText.text = "Oh Look! The Guard here to give your your daily lunch.";
-        TutorialKnightCode.KnightWalksToDestination();
-    }
-
-    public void KnightWalksToDestination()
-    {
         Door.transform.Rotate(Door.transform.rotation.x, 90f, Door.transform.rotation.y);
         float DestinationZ = -8.63f;
         float DestinationX = 23.98f;
@@ -61,7 +54,7 @@ public class TutorialKnightScript : MonoBehaviour
         navMeshAgent.SetDestination(Destination);
         animator.SetBool("EnemyRunning", true);
 
-        if(distanceToDestination.magnitude <= 1f )
+        if (distanceToDestination.magnitude <= 1f)
         {
             StopMoving();
         }
@@ -159,6 +152,7 @@ public class TutorialKnightScript : MonoBehaviour
                         {
                             PlayerInAttackRange = true;
                         }
+                            CanSeePlayer = true;
                     }
                     else
                     {
@@ -171,10 +165,15 @@ public class TutorialKnightScript : MonoBehaviour
                 }
             }
         }
+        else if (CanSeePlayer)
+        {
+            NoRange();
+        }
     }
 
     private void NoRange()
     {
+        CanSeePlayer = false;
         PlayerInSightRange = false;
         PlayerInAttackRange = false;
     }
