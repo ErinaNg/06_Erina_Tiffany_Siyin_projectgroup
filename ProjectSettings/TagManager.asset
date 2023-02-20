@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
   - Obstacles
   - Door
   - Boss
@@ -13,12 +12,6 @@ TagManager:
   - Teleporter1
   - Teleporter2
   - Gate
-=======
-  - Confetti
-  - Gem
-  - Goal
-  - Door
->>>>>>> Erina
   layers:
   - Default
   - TransparentFX
@@ -28,15 +21,9 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
   - WhatIsPlayer
   - Ground
   - Obstacles
-=======
-  - Ground
-  - 
-  - 
->>>>>>> Erina
   - 
   - 
   - 

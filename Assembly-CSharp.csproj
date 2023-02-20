@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\EriPlayerController.cs" />
     <Compile Include="Assets\Eri_malechara.cs" />
     <Compile Include="Assets\Erina\Eri_gemcollector.cs" />
@@ -74,18 +73,6 @@
     <Compile Include="Assets\TiffanyScript\Script\BossScript.cs" />
     <Compile Include="Assets\TiffanyScript\Script\FieldOfViewEditior.cs" />
     <Compile Include="Assets\TiffanyScript\Script\TutorialKnightScript.cs" />
-=======
-    <Compile Include="Assets\Erina\EriScripts\EriDoorScript.cs" />
-    <Compile Include="Assets\Erina\EriScripts\EriPlayerController.cs" />
-    <Compile Include="Assets\Erina\EriScripts\Eri_RestartScene.cs" />
-    <Compile Include="Assets\Erina\EriScripts\Eri_gemcollector.cs" />
-    <Compile Include="Assets\Erina\EriScripts\Eri_malechara.cs" />
-    <Compile Include="Assets\Erina\EriScripts\Eri_playerscript.cs" />
-    <Compile Include="Assets\Erina\EriScripts\Eri_topdowncam.cs" />
-    <Compile Include="Assets\Erina\EriScripts\GameEvents.cs" />
-    <Compile Include="Assets\Erina\EriScripts\TriggerArea.cs" />
-    <None Include="Assets\JKT_ART\etc\MatCap.shader" />
->>>>>>> Erina
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
