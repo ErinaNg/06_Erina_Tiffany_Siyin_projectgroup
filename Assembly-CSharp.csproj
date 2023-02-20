@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{224AE427-8F97-7702-C304-3A3AF94CCF38}</ProjectGuid>
+    <ProjectGuid>{117078A7-F7E1-3DC4-6E6A-851BFB185834}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,11 +65,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
-    <Compile Include="Assets\EriPlayerController.cs" />
-    <Compile Include="Assets\Eri_malechara.cs" />
-    <Compile Include="Assets\Erina\Eri_gemcollector.cs" />
-    <Compile Include="Assets\Erina\Eri_playerscript.cs" />
-    <Compile Include="Assets\Erina\Eri_topdowncam.cs" />
+    <Compile Include="Assets\Erina\EriScripts\EriDoorScript.cs" />
+    <Compile Include="Assets\Erina\EriScripts\EriPlayerController.cs" />
+    <Compile Include="Assets\Erina\EriScripts\Eri_RestartScene.cs" />
+    <Compile Include="Assets\Erina\EriScripts\Eri_gemcollector.cs" />
+    <Compile Include="Assets\Erina\EriScripts\Eri_malechara.cs" />
+    <Compile Include="Assets\Erina\EriScripts\Eri_playerscript.cs" />
+    <Compile Include="Assets\Erina\EriScripts\Eri_topdowncam.cs" />
+    <Compile Include="Assets\Erina\EriScripts\GameEvents.cs" />
+    <Compile Include="Assets\Erina\EriScripts\TriggerArea.cs" />
+    <None Include="Assets\JKT_ART\etc\MatCap.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -599,36 +604,36 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_projectgroup/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Polyperfect.Universal.csproj">
-      <Project>{AD0B4F32-2906-14F1-8C53-A439AC495060}</Project>
+      <Project>{227122CE-D4CF-227E-6AF8-0788D648F97C}</Project>
       <Name>Polyperfect.Universal</Name>
     </ProjectReference>
   </ItemGroup>
