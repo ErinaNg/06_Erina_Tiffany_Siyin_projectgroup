@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TutorialKnightScript : MonoBehaviour
 {
-    public static bool IsActive;
+    public  bool IsActive;
     private NavMeshAgent navMeshAgent;
     public GameObject Halo;
     private Animator animator;
@@ -17,7 +17,7 @@ public class TutorialKnightScript : MonoBehaviour
     private bool TimerStart;
 
     public Transform PlayerTransform;
-    public static bool PlayerInSightRange, PlayerInAttackRange;
+    public bool PlayerInSightRange;
     public LayerMask Ground, WhatIsPlayer, Obstacles;
     public float Distance;
     [Range(0, 360)]
@@ -27,10 +27,11 @@ public class TutorialKnightScript : MonoBehaviour
     public float HearRadius;
     public float AttackRadius;
     private bool CanSeePlayer;
-
+    public static TutorialKnightScript TutorialKnight;
     // Start is called before the first frame update
     void Start()
     {
+        TutorialKnight = this;
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -47,8 +48,8 @@ public class TutorialKnightScript : MonoBehaviour
     {
         NarratorText.text = "Oh Look! The Guard here to give your your daily lunch.";
         Door.transform.Rotate(Door.transform.rotation.x, 90f, Door.transform.rotation.y);
-        float DestinationZ = -8.63f;
-        float DestinationX = 23.98f;
+        float DestinationZ = 23.62f;
+        float DestinationX = 29.58f;
         Vector3 Destination = new Vector3(DestinationX, transform.position.y, DestinationZ);
         Vector3 distanceToDestination = transform.position - Destination;
         navMeshAgent.SetDestination(Destination);
@@ -65,12 +66,13 @@ public class TutorialKnightScript : MonoBehaviour
         animator.SetBool("EnemyRunning", false);
         FoodTray.active = true;
         Invoke("TurnBehind", 1.5f);
+        TimerStart = false; 
     }
 
     void TurnBehind()
     {
-        float DestinationZ = -8.6f;
-        float DestinationX = 22f;
+        float DestinationZ = 23.62f;
+        float DestinationX = 26.18f;
         Vector3 NewDestination = new Vector3(DestinationX, transform.position.y, DestinationZ);
         navMeshAgent.SetDestination(NewDestination);
         NarratorText.text = "Wait a min...The guard has turn behind! Quick! Sneak behind him and press Q to knock him out!";
@@ -78,7 +80,8 @@ public class TutorialKnightScript : MonoBehaviour
 
     public void TutorialKnightKnockOut()
     {
-        NarratorText.text = "Good Job! Now Quick get out of here! To that teleporter!";
+        IsActive = false;
+        NarratorText.text = "Good Job! Now Quick get out of here!";
     }
 
 
@@ -103,7 +106,6 @@ public class TutorialKnightScript : MonoBehaviour
             if (DestinationTimer >= 8f)
             {
                 StopMoving();
-                TimerStart = false;
             }
         }
     }
@@ -148,11 +150,7 @@ public class TutorialKnightScript : MonoBehaviour
 
                         //Check for attack range
                         float AttackDistance = Vector3.Distance(transform.position, PlayerTransform.position);
-                        if (AttackDistance < AttackRadius)
-                        {
-                            PlayerInAttackRange = true;
-                        }
-                            CanSeePlayer = true;
+                        CanSeePlayer = true;
                     }
                     else
                     {
@@ -175,7 +173,6 @@ public class TutorialKnightScript : MonoBehaviour
     {
         CanSeePlayer = false;
         PlayerInSightRange = false;
-        PlayerInAttackRange = false;
     }
 }
 

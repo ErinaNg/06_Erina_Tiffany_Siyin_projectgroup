@@ -103,8 +103,8 @@ GameObject:
   - component: {fileID: 3526959700467949985}
   - component: {fileID: 3526959700467949984}
   m_Layer: 0
-  m_Name: Teleporter2
-  m_TagString: Teleporter2
+  m_Name: Teleporter
+  m_TagString: Teleporter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,7 +7,6 @@ public class Eri_malechara : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
-
     private Vector3 moveDirection;
     private CharacterController controller;
 
@@ -55,5 +54,27 @@ public class Eri_malechara : MonoBehaviour
     private void Run()
     {
         moveSpeed = runSpeed;
+    }
+
+    private void OnTriggerStay(Collider Other)
+    {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            if (Other.gameObject.tag == "Tutorial")
+            {
+                if (TutorialKnightScript.TutorialKnight.IsActive && !TutorialKnightScript.TutorialKnight.PlayerInSightRange)
+                {
+                    TutorialKnightScript.TutorialKnight.TutorialKnightKnockOut();
+                }
+            }
+
+            if (Other.gameObject.tag == "Boss")
+            {
+                if (!BossScript.PlayerInSightRange && BossScript.IsActive && !BossScript.IfAttackPlayer)
+                {
+                    BossScript.IsActive = false;
+                }
+            }
+        }
     }
 }

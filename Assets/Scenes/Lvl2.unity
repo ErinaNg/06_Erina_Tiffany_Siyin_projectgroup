@@ -37233,7 +37233,7 @@ PrefabInstance:
     - target: {fileID: 3526959700467950014, guid: dbd34aefc644cea47a6c8499021e3510,
         type: 3}
       propertyPath: m_Name
-      value: Teleporter2
+      value: Teleporter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd34aefc644cea47a6c8499021e3510, type: 3}

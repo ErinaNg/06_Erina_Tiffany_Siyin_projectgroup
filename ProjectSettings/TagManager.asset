@@ -7,11 +7,9 @@ TagManager:
   - Obstacles
   - Door
   - Boss
-  - Sword
   - Tutorial
-  - Teleporter1
-  - Teleporter2
   - Gate
+  - Teleporter
   layers:
   - Default
   - TransparentFX
