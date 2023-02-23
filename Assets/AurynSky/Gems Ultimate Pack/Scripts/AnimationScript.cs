@@ -7,7 +7,6 @@ public class AnimationScript : MonoBehaviour {
 
     public bool isRotating = false;
     public bool isFloating = false;
-    public bool isScaling = false;
 
     public Vector3 rotationAngle;
     public float rotationSpeed;
@@ -17,14 +16,6 @@ public class AnimationScript : MonoBehaviour {
     public float floatRate;
     private float floatTimer;
    
-    public Vector3 startScale;
-    public Vector3 endScale;
-
-    private bool scalingUp = true;
-    public float scaleSpeed;
-    public float scaleRate;
-    private float scaleTimer;
-
 	// Use this for initialization
 	void Start () {
 	
@@ -60,27 +51,6 @@ public class AnimationScript : MonoBehaviour {
                     goingUp = true;
                     floatTimer = 0;
                     floatSpeed = +floatSpeed;
-                }
-            }
-
-            if(isScaling)
-            {
-                scaleTimer += Time.deltaTime;
-
-                if (scalingUp)
-                {
-                    transform.localScale = Vector3.Lerp(transform.localScale, endScale, scaleSpeed * Time.deltaTime);
-                }
-                else if (!scalingUp)
-                {
-                    transform.localScale = Vector3.Lerp(transform.localScale, startScale, scaleSpeed * Time.deltaTime);
-                }
-
-                if(scaleTimer >= scaleRate)
-                {
-                    if (scalingUp) { scalingUp = false; }
-                    else if (!scalingUp) { scalingUp = true; }
-                    scaleTimer = 0;
                 }
             }
         }
