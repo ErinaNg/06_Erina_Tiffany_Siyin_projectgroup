@@ -5,26 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Eri_RestartScene : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
+    public void restartScene()
     {
-
+        SceneManager.LoadScene("Lvl1");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void OnRestartLevel()
+    public void OnNextLevel()
     {
         SceneManager.LoadScene("Lvl1");
     }
 
-    public void OnNextLevel()
+    public void OnLevelsecond()
     {
         SceneManager.LoadScene("Lvl2");
     }
+
+
 }

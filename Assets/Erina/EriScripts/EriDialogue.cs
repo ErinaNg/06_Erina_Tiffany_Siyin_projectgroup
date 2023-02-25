@@ -15,6 +15,8 @@ public class EriDialogue: MonoBehaviour
     //public string name;
     //[TextArea(3, 10)]
     // Start is called before the first frame update
+
+  
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -34,6 +36,7 @@ public class EriDialogue: MonoBehaviour
             else
             {
                 StopAllCoroutines();
+     
                 textComponent.text = sentences[index];
             }
         }
@@ -62,10 +65,15 @@ public class EriDialogue: MonoBehaviour
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
+      
         }
         else
         {
             gameObject.SetActive(false);
         }
     }
+
+   
+
+
 }

@@ -66,8 +66,6 @@
   <ItemGroup>
     <Compile Include="Assets\Erina\EriScripts\AnimationScript.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriDialogue.cs" />
-    <Compile Include="Assets\Erina\EriScripts\EriDialogueManager.cs" />
-    <Compile Include="Assets\Erina\EriScripts\EriDialogueTrigger.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriDoorScript.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriPlayerController.cs" />
     <Compile Include="Assets\Erina\EriScripts\Eri_RestartScene.cs" />
@@ -77,6 +75,8 @@
     <Compile Include="Assets\Erina\EriScripts\Eri_topdowncam.cs" />
     <Compile Include="Assets\Erina\EriScripts\GameEvents.cs" />
     <Compile Include="Assets\Erina\EriScripts\TriggerArea.cs" />
+    <Compile Include="Assets\Siyin\menuSettings.cs" />
+    <Compile Include="Assets\Siyin\sceneSwitch.cs" />
     <Compile Include="Assets\TiffanyScript\Script\BossScript.cs" />
     <Compile Include="Assets\TiffanyScript\Script\FieldOfViewEditior.cs" />
     <Compile Include="Assets\TiffanyScript\Script\TutorialKnightScript.cs" />
