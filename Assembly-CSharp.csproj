@@ -64,7 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+    <Compile Include="Assets\Erina\EriScripts\AnimationScript.cs" />
+    <Compile Include="Assets\Erina\EriScripts\EriDialogue.cs" />
+    <Compile Include="Assets\Erina\EriScripts\EriDialogueManager.cs" />
+    <Compile Include="Assets\Erina\EriScripts\EriDialogueTrigger.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriDoorScript.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriPlayerController.cs" />
     <Compile Include="Assets\Erina\EriScripts\Eri_RestartScene.cs" />
@@ -77,7 +80,6 @@
     <Compile Include="Assets\TiffanyScript\Script\BossScript.cs" />
     <Compile Include="Assets\TiffanyScript\Script\FieldOfViewEditior.cs" />
     <Compile Include="Assets\TiffanyScript\Script\TutorialKnightScript.cs" />
-    <None Include="Assets\JKT_ART\etc\MatCap.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -606,14 +608,32 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -624,35 +644,17 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
@@ -660,11 +662,11 @@
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Users/Li Qing/Desktop/06_Erina_Tiffany_Siyin_projectgroup/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

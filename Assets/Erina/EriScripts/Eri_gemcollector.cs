@@ -36,9 +36,17 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     private AudioSource audioSource;
     public GameObject replay;
     private Animator anim;
-
     // Start is called before the first frame update
 
+
+    void Awake()
+    {
+        GameOverUI.SetActive(false);
+        GameWinUI.SetActive(false);
+        PauseMenu.SetActive(false);
+        replay.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         Being(Duration);
@@ -68,16 +76,9 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     }
     private void OnEnd()
     {
-        print("End");
+        //print("End");
     }
-    void Awake()
-    {
-        GameOverUI.SetActive(false);
-        GameWinUI.SetActive(false);
-        PauseMenu.SetActive(false);
-        replay.SetActive(false);
-        audioSource = GetComponent<AudioSource>();
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -156,8 +157,9 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
                 anim.SetTrigger("Win");
                 GameWinUI.SetActive(true);
                 replay.SetActive(true);
-                SceneManager.LoadScene("Lvl2");
                 uiMessage.SetActive(false);
+                StartCoroutine(LoadToNextScene());
+
             }
             else
             {
@@ -180,6 +182,12 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         uiMessage.gameObject.SetActive(false);
+    }
+
+    IEnumerator LoadToNextScene()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Lvl2");
     }
 
     void OnCollisionEnter(Collision otherObj)

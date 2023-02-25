@@ -22,4 +22,9 @@ public class Eri_RestartScene : MonoBehaviour
     {
         SceneManager.LoadScene("Lvl1");
     }
+
+    public void OnNextLevel()
+    {
+        SceneManager.LoadScene("Lvl2");
+    }
 }

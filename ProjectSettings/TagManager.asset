@@ -8,6 +8,8 @@ TagManager:
   - Gem
   - Goal
   - Door
+  - Boss
+  - Dialogue
   layers:
   - Default
   - TransparentFX
