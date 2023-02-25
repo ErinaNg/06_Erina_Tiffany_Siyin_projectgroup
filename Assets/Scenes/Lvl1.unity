@@ -23596,6 +23596,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4836109888869475933, guid: 2c9cfc19786994949b2e383bd2104eba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5191210305836373072, guid: 2c9cfc19786994949b2e383bd2104eba,
         type: 3}
       propertyPath: gemText

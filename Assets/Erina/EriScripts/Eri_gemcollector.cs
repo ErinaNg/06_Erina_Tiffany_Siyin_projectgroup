@@ -140,14 +140,25 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
 
         }
 
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Tutorial")
         {
             deathSound.Play();
             if (isGameOver)
             {
                 SetGameOver(true);
             }
-            //SceneManager.LoadScene("GameLose");
+            SceneManager.LoadScene("GameLose");
+        }
+
+
+        if (other.gameObject.tag == "Boss")
+        {
+            deathSound.Play();
+            if (isGameOver)
+            {
+                SetGameOver(true);
+            }
+            SceneManager.LoadScene("GameLose");
         }
 
         if (other.gameObject.tag == "Goal")  //goal is the door to escape
