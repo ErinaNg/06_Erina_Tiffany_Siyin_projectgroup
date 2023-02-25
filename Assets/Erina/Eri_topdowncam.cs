@@ -4,11 +4,35 @@ using UnityEngine;
 
 public class Eri_topdowncam : MonoBehaviour
 {
-    public GameObject character;
-    public Vector3 positionOffSet;
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private float mouseSensitivity;  //var
+
+    private Transform parent; //ref
+
+    //public gameobject character;
+    //public vector3 positionoffset;
+    //// update is called once per frame
+    //void update()
+    //{
+    //    transform.position = vector3.lerp(transform.position, character.transform.position + positionoffset, time.deltatime * 5);
+    //}
+
+    private void Start()
     {
-        transform.position = Vector3.Lerp(transform.position, character.transform.position + positionOffSet, Time.deltaTime * 5);
+        parent = transform.parent;
+        Cursor.lockState = CursorLockMode.Locked;
     }
+
+    private void Update()
+    {
+        Rotate();
+    }
+
+    private void Rotate()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        parent.Rotate(Vector3.up, mouseX);
+
+    }
+
+
 }

@@ -75,7 +75,7 @@ public class TutorialKnightScript : MonoBehaviour
         float DestinationX = 26.18f;
         Vector3 NewDestination = new Vector3(DestinationX, transform.position.y, DestinationZ);
         navMeshAgent.SetDestination(NewDestination);
-        NarratorText.text = "Wait a min...The guard has turn behind! Quick! Sneak behind him and press Q to knock him out!";
+        NarratorText.text = "Wait a min...The guard has turn behind! Quick! Sneak behind him and left click to knock him out!";
     }
 
     public void TutorialKnightKnockOut()

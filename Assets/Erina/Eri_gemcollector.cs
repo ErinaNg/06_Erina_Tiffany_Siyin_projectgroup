@@ -92,7 +92,7 @@ public class Eri_gemcollector : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" && BossScript.IfAttackPlayer)
         {
             deathSound.Play();
             if (isGameOver)
