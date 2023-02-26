@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 4836109889286877196}
   - component: {fileID: 4836109889286877198}
   - component: {fileID: 4836109888243184273}
-  - component: {fileID: 4836109888243184272}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -282,18 +281,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &4836109888243184272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4836109889286877194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b03eda0e3adadbe41a603ccd91082275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9138579543703393744
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +323,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0, g: 1, b: 0.011367798, a: 1}
+  m_Color: {r: 1, g: 0.92009413, b: 0, a: 1}
   m_Intensity: 3
   m_Range: 50
   m_SpotAngle: 29

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Erina\EriScripts\EriDialogue.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriDoorScript.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriPlayerController.cs" />
+    <Compile Include="Assets\Erina\EriScripts\EriReplay.cs" />
     <Compile Include="Assets\Erina\EriScripts\Eri_RestartScene.cs" />
     <Compile Include="Assets\Erina\EriScripts\Eri_gemcollector.cs" />
     <Compile Include="Assets\Erina\EriScripts\Eri_malechara.cs" />

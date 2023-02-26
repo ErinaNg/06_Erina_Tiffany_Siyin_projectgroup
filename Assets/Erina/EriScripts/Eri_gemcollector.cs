@@ -26,31 +26,31 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     [SerializeField] private AudioSource collectSound;
     [SerializeField] private AudioSource popSound;
     [SerializeField] private AudioSource deathSound;
-
+    [SerializeField] private AudioSource GameWinSound;
+    [SerializeField] private AudioSource GameLoseSound;
     public GameObject GameOverUI;
     public GameObject GameWinUI;
-    public GameObject PauseMenu;
+    //public GameObject replayUI;
     public GameObject uiMessage;
-    public AudioClip GameWinSound;
-    public AudioClip GameLoseSound;
     private AudioSource audioSource;
-    public GameObject replay;
-    private Animator anim;
-    // Start is called before the first frame update
+
+    public static gamestate currentState = gamestate.playing;
+    public enum gamestate
+    {
+        gameover,
+        pause,
+        playing
+    }
 
 
     void Awake()
     {
-        GameOverUI.SetActive(false);
-        GameWinUI.SetActive(false);
-        PauseMenu.SetActive(false);
-        replay.SetActive(false);
         audioSource = GetComponent<AudioSource>();
     }
     private void Start()
     {
         Being(Duration);
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
         uiMessage.SetActive(false);
     }
     private void Being(int Second)
@@ -83,45 +83,27 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        if (isGameOver)
-            return;
-
-        //Timer = Timer + Time.deltaTime;
-        //TimerSeconds = Mathf.FloorToInt(Timer % 60);
-        //TimerText.text = "Timer: " + TimerSeconds.ToString();
         if (remainDuration <= 0 && gem < 8)
         {
-            GameOverUI.SetActive(true);
-            replay.SetActive(true);
-            // SceneManager.LoadScene("GameLose"); use UI
+            GameLose();
         }
     }
 
-    public void SetGameOver(bool isWin)
+    public void GameWin()
     {
-        isGameOver = true;
+        // finishing game
+        currentState = gamestate.gameover;
+        GameWinSound.Play();
+        GameWinUI.SetActive(true);
+        
+    }
 
-        if (isWin)
-        {
-
-            audioSource.PlayOneShot(GameWinSound);
-            GameOverUI.SetActive(false);
-            PauseMenu.SetActive(false);
-            GameWinUI.SetActive(true);
-            IsWinShown = true;
-        }
-        else
-        {
-            if (!GameOverIsPlayed)
-            {
-                audioSource.PlayOneShot(GameLoseSound);
-
-                GameOverIsPlayed = true;
-            }
-            GameOverUI.SetActive(true);
-            GameWinUI.SetActive(false);
-            PauseMenu.SetActive(false);
-        }
+    public void GameLose()
+    {
+        currentState = gamestate.gameover;
+        deathSound.Play();
+        GameLoseSound.Play();
+        GameOverUI.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -143,31 +125,19 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         if (other.gameObject.tag == "Tutorial")
         {
             deathSound.Play();
-            if (isGameOver)
-            {
-                SetGameOver(true);
-            }
-            SceneManager.LoadScene("GameLose");
         }
 
 
         if (other.gameObject.tag == "Boss")
         {
             deathSound.Play();
-            if (isGameOver)
-            {
-                SetGameOver(true);
-            }
-            SceneManager.LoadScene("GameLose");
         }
 
         if (other.gameObject.tag == "Goal")  //goal is the door to escape
         {
             if (gem >= 8)       //Win // Add another && OnCollision with end goal then win
             {
-                anim.SetTrigger("Win");
-                GameWinUI.SetActive(true);
-                replay.SetActive(true);
+                GameWin();
                 uiMessage.SetActive(false);
                 StartCoroutine(LoadToNextScene());
 
@@ -197,9 +167,10 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
 
     IEnumerator LoadToNextScene()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(5);  
         SceneManager.LoadScene("Lvl2");
     }
+
 
     void OnCollisionEnter(Collision otherObj)
     {

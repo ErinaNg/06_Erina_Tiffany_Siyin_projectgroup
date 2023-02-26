@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 56d134d8c6859b31d93ddc3e99c699ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f25b2901468c6fdb9aeac1f2b006f12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3711,7 +3711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2639745f31ad3e028306edd7ed885fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68f9c129f52dd40e69b4ebbe3b76c4a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3803,7 +3803,8 @@ MonoBehaviour:
     CLOSE DIALOGUE\n\nESCAPE- PAUSE GAME\n\nHOW TO PLAY:\n\nYOUR OBJECTIVE IS TO
     STEAL ALL 8 GEMS IN EACH LEVEL (1&2) \n\n WITHIN A TIME LIMIT AND FIND AN EXIT
     DOOR\n\n IN LEVEL 2 (CEMETERY) ONCE YOU FOUND THE GATE YOU WIN THE GAME\n\nCOLLECTING
-    GEMS HELP YOU TO EARN MORE TIME \n\nIF TIME IS UP YOU LOSE THE GAME "
+    GEMS HELP YOU TO EARN MORE TIME \n\nPLAYER WILL LOSE IF THERE IS NO TIME OR COLLIDES
+    WITH ENEMY"
 --- !u!222 &2112099573
 CanvasRenderer:
   m_ObjectHideFlags: 0
