@@ -24531,5 +24531,10 @@ PrefabInstance:
       propertyPath: replayUI
       value: 
       objectReference: {fileID: 1224882994}
+    - target: {fileID: 5191210305836373072, guid: 2c9cfc19786994949b2e383bd2104eba,
+        type: 3}
+      propertyPath: uibuttonSound
+      value: 
+      objectReference: {fileID: 482907281}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c9cfc19786994949b2e383bd2104eba, type: 3}

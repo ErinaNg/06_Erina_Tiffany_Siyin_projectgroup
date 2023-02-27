@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Eri_malechara : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    [SerializeField] public static float moveSpeed = 4; //intialize no 
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
 
@@ -85,23 +85,6 @@ public class Eri_malechara : MonoBehaviour
     {
         moveSpeed = walkSpeed;
         anim.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
-
-        //if(Input.GetKeyDown(KeyCode.S))
-        //{
-        //    anim.SetFloat("Speed", -1, 0.1f, Time.deltaTime);
-        //}
-        //if (Input.GetKeyDown(KeyCode.W))
-        //{
-        //    anim.SetFloat("Speed", 0.3f, 0.1f, Time.deltaTime);
-        //}
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    anim.SetFloat("Speed", -0.3f, 0.1f, Time.deltaTime);
-        //}
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    anim.SetFloat("Speed", 1, 0.1f, Time.deltaTime);
-        //}
     }
 
     private void Run()
@@ -124,22 +107,17 @@ public class Eri_malechara : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0)) //Left Click 
         {
-            if(other.gameObject.tag == "Tutorial")
+            if(other.gameObject.tag == "Enemy")
             {
                 if(TutorialKnightScript.TutorialKnight.IsActive && !TutorialKnightScript.TutorialKnight.PlayerInSightRange)
                 {
                     TutorialKnightScript.TutorialKnight.TutorialKnightKnockOut();
                 }
-            }
-            if (other.gameObject.tag == "Boss")
-            {
-                if(!BossScript.PlayerInSightRange && BossScript.IsActive && !BossScript.IfAttackPlayer)
+                if (!BossScript.PlayerInSightRange && BossScript.IsActive && !BossScript.IfAttackPlayer)
                 {
                     BossScript.IsActive = false;
                 }
             }
-
-
         }
     }
 }

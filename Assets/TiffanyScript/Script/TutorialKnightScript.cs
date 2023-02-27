@@ -48,8 +48,8 @@ public class TutorialKnightScript : MonoBehaviour
     {
         NarratorText.text = "Oh Look! The Guard here to give your your daily lunch.";
         Door.transform.Rotate(Door.transform.rotation.x, 90f, Door.transform.rotation.y);
-        float DestinationZ = 23.62f;
-        float DestinationX = 29.58f;
+        float DestinationZ = -8.63f;
+        float DestinationX = 23.98f;
         Vector3 Destination = new Vector3(DestinationX, transform.position.y, DestinationZ);
         Vector3 distanceToDestination = transform.position - Destination;
         navMeshAgent.SetDestination(Destination);
@@ -71,8 +71,8 @@ public class TutorialKnightScript : MonoBehaviour
 
     void TurnBehind()
     {
-        float DestinationZ = 23.62f;
-        float DestinationX = 26.18f;
+        float DestinationZ = -8.6f;  //Tiffany need to recalculate
+        float DestinationX = 22f;
         Vector3 NewDestination = new Vector3(DestinationX, transform.position.y, DestinationZ);
         navMeshAgent.SetDestination(NewDestination);
         NarratorText.text = "Wait a min...The guard has turn behind! Quick! Sneak behind him and left click to knock him out!";

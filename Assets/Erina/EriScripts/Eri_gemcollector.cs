@@ -28,6 +28,7 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     [SerializeField] private AudioSource deathSound;
     [SerializeField] private AudioSource GameWinSound;
     [SerializeField] private AudioSource GameLoseSound;
+    [SerializeField] private AudioSource uibuttonSound;
     public GameObject GameOverUI;
     public GameObject GameWinUI;
     //public GameObject replayUI;
@@ -97,7 +98,7 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         GameWinSound.Play();
         GameWinUI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
-        AudioListener.pause = false;
+
 
     }
 
@@ -108,7 +109,6 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         GameLoseSound.Play();
         GameOverUI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
-        AudioListener.pause = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -127,17 +127,11 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
 
         }
 
-        if (other.gameObject.tag == "Tutorial")
+        if (other.gameObject.tag == "Enemy" && BossScript.IfAttackPlayer) //Tiffany
         {
             deathSound.Play();
+            GameLose();
         }
-
-
-        if (other.gameObject.tag == "Boss")
-        {
-            deathSound.Play();
-        }
-
         if (other.gameObject.tag == "Goal")  //goal is the door to escape
         {
             if (gem >= 8)       //Win // Add another && OnCollision with end goal then win
@@ -186,15 +180,16 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     }
 
     public void OnClickReplayAgain()
-    {  //if gameover
+    {
+        uibuttonSound.Play();
         StartCoroutine(ReplayS());
-
     }
 
     IEnumerator ReplayS()
     {
         yield return new WaitForSeconds(1);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Lvl1");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 }

@@ -22,14 +22,14 @@ public class Eri_RestartScene : MonoBehaviour //pause game
         {
             if (GameIsPaused)
             {
-                Eri_gemcollector.currentState = Eri_gemcollector.gamestate.playing;
-                AudioListener.pause = false;
+                Eri_gemcollector.currentState = Eri_gemcollector.gamestate.pause; //change
+                playAudio();
                 Resume();
             }
             else
             {
-                Eri_gemcollector.currentState = Eri_gemcollector.gamestate.pause;
-                AudioListener.pause = true;
+                Eri_gemcollector.currentState = Eri_gemcollector.gamestate.playing;
+                //AudioListener.pause = false;
                 Pause();
             }
         }
@@ -49,11 +49,11 @@ public class Eri_RestartScene : MonoBehaviour //pause game
     void Pause()
     {
         Cursor.lockState = CursorLockMode.Confined;
-        playAudio();
-        pauseMenuUI.SetActive(true); //enable
+        pauseMenuUI.SetActive(true); 
         Time.timeScale = 0f; //freeze 
         GameIsPaused = true;
-       
+        AudioListener.pause = true;
+
     }
 
     public void QuitMenu()
@@ -68,6 +68,11 @@ public class Eri_RestartScene : MonoBehaviour //pause game
     public void playAudio()
     {
         clickingSound.Play();
+    }
+
+    public void AfterDialogueGoNextScene()
+    {
+        SceneManager.LoadScene("Lvl1");
     }
 
 

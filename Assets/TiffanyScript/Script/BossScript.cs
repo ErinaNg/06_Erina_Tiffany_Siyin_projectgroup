@@ -81,10 +81,9 @@ public class BossScript : MonoBehaviour
 
     private void HearPlayerLocation()
     {
-        //Player.GetComponent<FirstPersonController>().m_IsWalking == false && 
         start1:
         float HearDistance = Vector3.Distance(transform.position, PlayerTransform.position);
-        if (HearDistance < HearRadius)
+        if (HearDistance < HearRadius || Eri_malechara.moveSpeed >= 5)  //access script
         {
             //If Got Hear go to the player location but if player move somewhere
             SoundPoint = PlayerTransform.position;

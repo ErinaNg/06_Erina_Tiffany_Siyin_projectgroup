@@ -67,8 +67,6 @@
     <Compile Include="Assets\Erina\EriScripts\AnimationScript.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriDialogue.cs" />
     <Compile Include="Assets\Erina\EriScripts\EriDoorScript.cs" />
-    <Compile Include="Assets\Erina\EriScripts\EriPlayerController.cs" />
-    <Compile Include="Assets\Erina\EriScripts\EriReplay.cs" />
     <Compile Include="Assets\Erina\EriScripts\Eri_RestartScene.cs" />
     <Compile Include="Assets\Erina\EriScripts\Eri_gemcollector.cs" />
     <Compile Include="Assets\Erina\EriScripts\Eri_malechara.cs" />
@@ -79,7 +77,6 @@
     <Compile Include="Assets\Siyin\menuSettings.cs" />
     <Compile Include="Assets\Siyin\sceneSwitch.cs" />
     <Compile Include="Assets\TiffanyScript\Script\BossScript.cs" />
-    <Compile Include="Assets\TiffanyScript\Script\FieldOfViewEditior.cs" />
     <Compile Include="Assets\TiffanyScript\Script\TutorialKnightScript.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
