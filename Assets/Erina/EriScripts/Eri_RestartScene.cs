@@ -7,7 +7,6 @@ public class Eri_RestartScene : MonoBehaviour //pause game
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-
     private AudioSource audioSource;
     [SerializeField] private AudioSource clickingSound;
 
@@ -21,17 +20,16 @@ public class Eri_RestartScene : MonoBehaviour //pause game
         //if currentstate != 0
         if (Input.GetKeyDown(KeyCode.Escape) && Eri_gemcollector.currentState != Eri_gemcollector.gamestate.gameover)
         {
-            playAudio();
-
             if (GameIsPaused)
             {
                 Eri_gemcollector.currentState = Eri_gemcollector.gamestate.playing;
-                AudioListener.pause = true;
+                AudioListener.pause = false;
                 Resume();
             }
             else
             {
                 Eri_gemcollector.currentState = Eri_gemcollector.gamestate.pause;
+                AudioListener.pause = true;
                 Pause();
             }
         }
@@ -40,9 +38,9 @@ public class Eri_RestartScene : MonoBehaviour //pause game
 
     public void Resume()
     {
+        AudioListener.pause = false;
         Cursor.lockState = CursorLockMode.Locked;
         playAudio();
-        AudioListener.pause = false;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -51,10 +49,11 @@ public class Eri_RestartScene : MonoBehaviour //pause game
     void Pause()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        playAudio();
         pauseMenuUI.SetActive(true); //enable
         Time.timeScale = 0f; //freeze 
         GameIsPaused = true;
-        AudioListener.pause = true;
+       
     }
 
     public void QuitMenu()
@@ -71,20 +70,7 @@ public class Eri_RestartScene : MonoBehaviour //pause game
         clickingSound.Play();
     }
 
-    public void ReplayGame()
-    {
-        playAudio();
-        Cursor.lockState = CursorLockMode.Confined;
-        StartCoroutine(ReplayS());
-        AudioListener.pause = false;
 
-    }
-
-    IEnumerator ReplayS()
-    {
-        yield return new WaitForSeconds(1);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene("Lvl1");
-    }
+    
 
 }

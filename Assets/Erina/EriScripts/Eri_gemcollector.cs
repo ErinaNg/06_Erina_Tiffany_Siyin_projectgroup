@@ -93,9 +93,12 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     {
         // finishing game
         currentState = gamestate.gameover;
+        Cursor.lockState = CursorLockMode.Confined;
         GameWinSound.Play();
         GameWinUI.SetActive(true);
-        
+        Cursor.lockState = CursorLockMode.Confined;
+        AudioListener.pause = false;
+
     }
 
     public void GameLose()
@@ -104,6 +107,8 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         deathSound.Play();
         GameLoseSound.Play();
         GameOverUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        AudioListener.pause = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -178,5 +183,18 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         {
             Destroy(gameObject, .5f);
         }
+    }
+
+    public void OnClickReplayAgain()
+    {  //if gameover
+        StartCoroutine(ReplayS());
+
+    }
+
+    IEnumerator ReplayS()
+    {
+        yield return new WaitForSeconds(1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Lvl1");
     }
 }
