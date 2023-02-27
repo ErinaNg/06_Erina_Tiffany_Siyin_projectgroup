@@ -29,9 +29,9 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     [SerializeField] private AudioSource GameWinSound;
     [SerializeField] private AudioSource GameLoseSound;
     [SerializeField] private AudioSource uibuttonSound;
+    [SerializeField] private AudioSource bgmSound;
     public GameObject GameOverUI;
     public GameObject GameWinUI;
-    //public GameObject replayUI;
     public GameObject uiMessage;
     private AudioSource audioSource;
 
@@ -92,21 +92,22 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
 
     public void GameWin()
     {
+        bgmSound.Stop();
         // finishing game
         currentState = gamestate.gameover;
         Cursor.lockState = CursorLockMode.Confined;
         GameWinSound.Play();
         GameWinUI.SetActive(true);
-        Cursor.lockState = CursorLockMode.Confined;
 
 
     }
 
     public void GameLose()
     {
-        currentState = gamestate.gameover;
+        bgmSound.Stop();
         deathSound.Play();
         GameLoseSound.Play();
+        currentState = gamestate.gameover;
         GameOverUI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -138,7 +139,6 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
             {
                 GameWin();
                 uiMessage.SetActive(false);
-                StartCoroutine(LoadToNextScene());
 
             }
             else
@@ -166,7 +166,7 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
 
     IEnumerator LoadToNextScene()
     {
-        yield return new WaitForSeconds(5);  
+        yield return new WaitForSeconds(3);  
         SceneManager.LoadScene("Lvl2");
     }
 
@@ -191,5 +191,11 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         SceneManager.LoadScene("Lvl1");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
+    }
+
+    public void GoNextLevelScene()
+    {
+        uibuttonSound.Play();
+        SceneManager.LoadScene("Lvl2");
     }
 }
