@@ -108,7 +108,7 @@ public class Eri_gemcollector : MonoBehaviour
             }
         }
 
-        if(other.gameObject.tag == "Door")
+        if(other.gameObject.tag == "Door" && !TutorialKnightScript.TutorialKnight.IsActive)
         {
             SceneManager.LoadScene("Lvl1");
         }

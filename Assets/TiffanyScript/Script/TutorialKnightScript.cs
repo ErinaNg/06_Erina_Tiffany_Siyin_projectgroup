@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TutorialKnightScript : MonoBehaviour
 {
-    public  bool IsActive;
+    public bool IsActive;
     private NavMeshAgent navMeshAgent;
     public GameObject Halo;
     private Animator animator;
