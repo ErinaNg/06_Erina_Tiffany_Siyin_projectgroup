@@ -16,24 +16,24 @@ public class Eri_gemcollector : MonoBehaviour
     public static bool IsWinShown;
     private bool GameOverIsPlayed = false;
 
-    [SerializeField] private AudioSource collectSound;
-    [SerializeField] private AudioSource deathSound;
+    //[SerializeField] private AudioSource collectSound;
+    //[SerializeField] private AudioSource deathSound;
 
-    public GameObject GameOverUI;
-    public GameObject GameWinUI;
-    public GameObject PauseMenu;
-    public AudioClip GameWinSound;
-    public AudioClip GameLoseSound;
-    public AudioSource audioSource;
+    //public GameObject GameOverUI;
+    //public GameObject GameWinUI;
+    //public GameObject PauseMenu;
+    //public AudioClip GameWinSound;
+    //public AudioClip GameLoseSound;
+    //public AudioSource audioSource;
 
     // Start is called before the first frame update
 
     void Awake()
     {
-        GameOverUI.SetActive(false);
-        GameWinUI.SetActive(false);
-        PauseMenu.SetActive(false);
-        audioSource = GetComponent<AudioSource>();
+        //GameOverUI.SetActive(false);
+        //GameWinUI.SetActive(false);
+        //PauseMenu.SetActive(false);
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -58,23 +58,23 @@ public class Eri_gemcollector : MonoBehaviour
         if (isWin)
         {
 
-            audioSource.PlayOneShot(GameWinSound);
-            GameOverUI.SetActive(false);
-            PauseMenu.SetActive(false);
-            GameWinUI.SetActive(true);
-            IsWinShown = true;
+            //audioSource.PlayOneShot(GameWinSound);
+            //GameOverUI.SetActive(false);
+            //PauseMenu.SetActive(false);
+            //GameWinUI.SetActive(true);
+            //IsWinShown = true;
         }
         else
         {
-            if (!GameOverIsPlayed)
-            {
-                audioSource.PlayOneShot(GameLoseSound);
+            //if (!GameOverIsPlayed)
+            //{
+            //    audioSource.PlayOneShot(GameLoseSound);
 
-                GameOverIsPlayed = true;
-            }
-            GameOverUI.SetActive(true);
-            GameWinUI.SetActive(false);
-            PauseMenu.SetActive(false);
+            //    GameOverIsPlayed = true;
+            //}
+            //GameOverUI.SetActive(true);
+            //GameWinUI.SetActive(false);
+            //PauseMenu.SetActive(false);
         }
     }
 
@@ -82,19 +82,17 @@ public class Eri_gemcollector : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
-            collectSound.Play();
+            //collectSound.Play();
             Destroy(other.gameObject);
             gem = gem + 1;
             gemText.text = "CoinScore: " + gem.ToString();
             Instantiate(gemParticle, gameObject.transform.position, Quaternion.identity);
             Destroy(GameObject.FindGameObjectWithTag("Particle"), 2);
-
-
         }
 
         if (other.gameObject.tag == "Enemy" && BossScript.IfAttackPlayer)
         {
-            deathSound.Play();
+            //deathSound.Play();
             if (isGameOver)
             {
                 SetGameOver(true);
@@ -110,6 +108,10 @@ public class Eri_gemcollector : MonoBehaviour
             }
         }
 
+        if(other.gameObject.tag == "Door")
+        {
+            SceneManager.LoadScene("Lvl1");
+        }
     }
 
     void OnCollisionEnter(Collision otherObj)

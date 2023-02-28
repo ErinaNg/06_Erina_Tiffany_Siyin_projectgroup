@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Eri_malechara : MonoBehaviour
 {
     [SerializeField] public static float moveSpeed = 4;
@@ -124,19 +125,16 @@ public class Eri_malechara : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(Other.gameObject.tag == "Tutorial")
-            {
-                if(TutorialKnightScript.TutorialKnight.IsActive && !TutorialKnightScript.TutorialKnight.PlayerInSightRange)
-                {
-                    TutorialKnightScript.TutorialKnight.TutorialKnightKnockOut();
-                }
-            }
-
             if (Other.gameObject.tag == "Enemy")
             {
                 if (!BossScript.PlayerInSightRange && BossScript.IsActive && !BossScript.IfAttackPlayer)
                 {
                     BossScript.IsActive = false;
+                }
+
+                if (TutorialKnightScript.TutorialKnight.IsActive && !TutorialKnightScript.TutorialKnight.PlayerInSightRange)
+                {
+                    TutorialKnightScript.TutorialKnight.TutorialKnightKnockOut();
                 }
             }
         }

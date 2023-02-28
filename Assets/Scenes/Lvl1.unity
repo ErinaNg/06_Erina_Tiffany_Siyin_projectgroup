@@ -14023,6 +14023,11 @@ PrefabInstance:
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5191210305836373072, guid: 2c9cfc19786994949b2e383bd2104eba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4836109888243184273, guid: 2c9cfc19786994949b2e383bd2104eba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c9cfc19786994949b2e383bd2104eba, type: 3}
