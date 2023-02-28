@@ -604,10 +604,6 @@
       <Project>{9FD4B76B-B050-C8E3-610C-930057329D5E}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
-    <ProjectReference Include="GameAssembly.csproj">
-      <Project>{6C9AD3E0-1724-9BD9-4C47-2A009229F54B}</Project>
-      <Name>GameAssembly</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{44972E1C-283D-CBBA-BBBB-A4A6018F2C44}</Project>
       <Name>UnityEditor.UI</Name>

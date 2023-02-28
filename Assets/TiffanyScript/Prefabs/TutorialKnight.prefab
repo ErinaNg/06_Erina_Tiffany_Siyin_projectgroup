@@ -5998,7 +5998,7 @@ GameObject:
   - component: {fileID: 3023263067249548764}
   m_Layer: 0
   m_Name: TutorialKnight
-  m_TagString: Tutorial
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6094,7 +6094,6 @@ MonoBehaviour:
   NarratorText: {fileID: 0}
   PlayerTransform: {fileID: 0}
   PlayerInSightRange: 0
-  PlayerInAttackRange: 0
   Ground:
     serializedVersion: 2
     m_Bits: 512

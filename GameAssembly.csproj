@@ -28,7 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -56,6 +56,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\TiffanyScript\Script\BossScript.cs" />
+     <Compile Include="Assets\TiffanyScript\Script\Erina\EriScripts\Eri_RestartScene.cs" />
+     <Compile Include="Assets\TiffanyScript\Script\Erina\Eri_gemcollector.cs" />
+     <Compile Include="Assets\TiffanyScript\Script\Erina\Eri_malechara.cs" />
+     <Compile Include="Assets\TiffanyScript\Script\Erina\Eri_playerscript.cs" />
+     <Compile Include="Assets\TiffanyScript\Script\Erina\Eri_topdowncam.cs" />
      <Compile Include="Assets\TiffanyScript\Script\FieldOfViewEditior.cs" />
      <Compile Include="Assets\TiffanyScript\Script\TutorialKnightScript.cs" />
      <None Include="Assets\TiffanyScript\Script\GameAssembly.asmdef" />
