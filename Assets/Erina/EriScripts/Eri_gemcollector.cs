@@ -128,11 +128,7 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
 
         }
 
-        if (other.gameObject.tag == "Enemy" && BossScript.IfAttackPlayer) //Tiffany
-        {
-            deathSound.Play();
-            GameLose();
-        }
+       
         if (other.gameObject.tag == "Goal")  //goal is the door to escape
         {
             if (gem >= 8)       //Win // Add another && OnCollision with end goal then win
@@ -147,10 +143,25 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
                 uiMessage.SetActive(true);
             }
         }
+        if (other.gameObject.tag == "TutorialDoor")
+        {
+            SceneManager.LoadScene("EriLvl1Dialogue");
+        }
+
+
 
     }
 
-   
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy" && BossScript.IfAttackPlayer) //Tiffany
+        {
+            deathSound.Play();
+            GameLose();
+        }
+    }
+
+
 
     IEnumerator ExampleCoroutine()
     {

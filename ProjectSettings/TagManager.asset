@@ -12,6 +12,7 @@ TagManager:
   - Dialogue
   - Enemy
   - Tutorial
+  - TutorialDoor
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Ground
   - Gem
   - Obstacles
-  - 
+  - WhatIsPlayer
   - 
   - 
   - 
