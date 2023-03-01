@@ -143,7 +143,14 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
                 uiMessage.SetActive(true);
             }
         }
-        if (other.gameObject.tag == "TutorialDoor")
+        if (other.gameObject.tag == "Gate")
+        {
+            if (gem >= 8)
+            {
+                GameWin();
+            }
+        }
+        if (other.gameObject.tag == "TutorialDoor" && !TutorialKnightScript.TutorialKnight.IsActive)
         {
             SceneManager.LoadScene("EriLvl1Dialogue");
         }
@@ -188,6 +195,7 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         {
             Destroy(gameObject, .5f);
         }
+
     }
 
     public void OnClickReplayAgain()

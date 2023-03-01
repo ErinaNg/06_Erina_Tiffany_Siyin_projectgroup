@@ -13,6 +13,9 @@ TagManager:
   - Enemy
   - Tutorial
   - TutorialDoor
+  - Teleporter
+  - Gate
+  - Obstacles
   layers:
   - Default
   - TransparentFX

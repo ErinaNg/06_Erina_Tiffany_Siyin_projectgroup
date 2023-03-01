@@ -109,13 +109,18 @@ public class Eri_malechara : MonoBehaviour
         {
             if(other.gameObject.tag == "Enemy")
             {
-                if(TutorialKnightScript.TutorialKnight.IsActive && !TutorialKnightScript.TutorialKnight.PlayerInSightRange)
-                {
-                    TutorialKnightScript.TutorialKnight.TutorialKnightKnockOut();
-                }
+                
                 if (!BossScript.PlayerInSightRange && BossScript.IsActive && !BossScript.IfAttackPlayer)
                 {
                     BossScript.IsActive = false;
+                }
+            }
+
+            if(other.gameObject.tag == "Tutorial")
+            {
+                if (TutorialKnightScript.TutorialKnight.IsActive && !TutorialKnightScript.TutorialKnight.PlayerInSightRange && TutorialKnightScript.TutorialKnight != null)
+                {
+                    TutorialKnightScript.TutorialKnight.TutorialKnightKnockOut();
                 }
             }
         }

@@ -38,7 +38,7 @@ public class TutorialKnightScript : MonoBehaviour
         IsActive = true;
         FoodTray.active = false;
         DestinationTimer = 0;
-        NarratorText.text = "Hello Timmy II! It seems you are in prison, like usual. Press WASD to move around.";
+        NarratorText.text = "Hello Timmy II! It seems you are in prison, as usual. Press WASD/Mouse Rotation to move around.";
         Invoke("KnightShowUpText", 3.5f);
         TimerStart = true;
         StartCoroutine(FOVRoutine());
