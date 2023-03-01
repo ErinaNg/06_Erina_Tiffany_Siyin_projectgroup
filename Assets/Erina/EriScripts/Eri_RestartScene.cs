@@ -70,12 +70,14 @@ public class Eri_RestartScene : MonoBehaviour //pause game
         clickingSound.Play();
     }
 
+    public void RestartLvl2()
+    {
+        SceneManager.LoadScene("Lvl2");
+    }
+
     public void AfterDialogueGoNextScene()
     {
         SceneManager.LoadScene("Lvl1");
     }
-
-
-    
 
 }

@@ -10,7 +10,6 @@ public class BossScript : MonoBehaviour
     public GameObject Halo;
     public LayerMask Ground, WhatIsPlayer, Obstacles;
     public bool CanSeePlayer;
-    public static bool IfAttackPlayer;
     public float Distance;
 
     [Range(0, 360)]
@@ -20,7 +19,7 @@ public class BossScript : MonoBehaviour
     public float HearRadius;
     public float AttackRadius;
     private NavMeshAgent navMeshAgent;
-    public static bool IsActive;
+    public  bool IsActive;
     private Animator animator;
 
     //Patroling
@@ -32,7 +31,7 @@ public class BossScript : MonoBehaviour
     public Vector3 SoundPoint;
 
     //States
-    public static bool PlayerInSightRange, PlayerInAttackRange;
+    public  bool PlayerInSightRange, PlayerInAttackRange;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +41,6 @@ public class BossScript : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         StartCoroutine(FOVRoutine());
         IsActive = true;
-        IfAttackPlayer = false;
         Halo.active = false;
         WalkPointTimer = 0;
 
@@ -116,7 +114,6 @@ public class BossScript : MonoBehaviour
             navMeshAgent.SetDestination(WalkPoint);
             Vector3 distanceToWalkPoint = transform.position - WalkPoint;
             animator.SetBool("EnemyRunning", true);
-            IfAttackPlayer = false;
 
             //Walkpoint reached 
             if (distanceToWalkPoint.magnitude < 1f)
@@ -136,7 +133,6 @@ public class BossScript : MonoBehaviour
     {
         WalkPointTimer = 0;
         WalkPointSet = false;
-        IfAttackPlayer = false;
         animator.SetBool("EnemyRunning", false);
     }
 
@@ -154,21 +150,19 @@ public class BossScript : MonoBehaviour
 
     private void ChasePlayer()
     {
-        IfAttackPlayer = false;
         animator.SetBool("EnemyRunning", true);
         navMeshAgent.SetDestination(PlayerTransform.position);
     }
 
-    private void AttackPlayer()
+    private void AttackPlayer() 
     {
-        IfAttackPlayer = true;
         animator.SetTrigger("EnemyAttack");
         transform.LookAt(PlayerTransform);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Obstacles" || collision.gameObject.tag == "Boss")
+        if(collision.gameObject.tag == "Obstacles" || collision.gameObject.tag == "Enemy")
         {
             CannotReachWalkPointOrCompletedWalkPoint();
         }

@@ -102,27 +102,4 @@ public class Eri_malechara : MonoBehaviour
     {
         anim.SetTrigger("Attack");
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if(Input.GetMouseButtonDown(0)) //Left Click 
-        {
-            if(other.gameObject.tag == "Enemy")
-            {
-                
-                if (!BossScript.PlayerInSightRange && BossScript.IsActive && !BossScript.IfAttackPlayer)
-                {
-                    BossScript.IsActive = false;
-                }
-            }
-
-            if(other.gameObject.tag == "Tutorial")
-            {
-                if (TutorialKnightScript.TutorialKnight.IsActive && !TutorialKnightScript.TutorialKnight.PlayerInSightRange && TutorialKnightScript.TutorialKnight != null)
-                {
-                    TutorialKnightScript.TutorialKnight.TutorialKnightKnockOut();
-                }
-            }
-        }
-    }
 }

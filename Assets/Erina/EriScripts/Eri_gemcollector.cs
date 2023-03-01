@@ -105,7 +105,7 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
     public void GameLose()
     {
         bgmSound.Stop();
-        deathSound.Play();
+        //deathSound.Play();
         GameLoseSound.Play();
         currentState = gamestate.gameover;
         GameOverUI.SetActive(true);
@@ -155,16 +155,33 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
             SceneManager.LoadScene("EriLvl1Dialogue");
         }
 
-
-
+        if (other.gameObject.tag == "Enemy" && other.GetComponent<BossScript>().PlayerInAttackRange && other.GetComponent<BossScript>().IsActive)
+        {
+            other.gameObject.SetActive(false);
+            //deathSound.Play();
+            GameLose();
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" && BossScript.IfAttackPlayer) //Tiffany
+        if (Input.GetMouseButtonDown(0)) //Left Click 
         {
-            deathSound.Play();
-            GameLose();
+            if (other.gameObject.tag == "Enemy")
+            {
+                if (!other.GetComponent<BossScript>().PlayerInSightRange && other.GetComponent<BossScript>().IsActive && !other.GetComponent<BossScript>().PlayerInAttackRange)
+                {
+                    other.GetComponent<BossScript>().IsActive = false;
+                }
+            }
+
+            if (other.gameObject.tag == "Tutorial")
+            {
+                if (TutorialKnightScript.TutorialKnight.IsActive && !TutorialKnightScript.TutorialKnight.PlayerInSightRange && TutorialKnightScript.TutorialKnight != null)
+                {
+                    TutorialKnightScript.TutorialKnight.TutorialKnightKnockOut();
+                }
+            }
         }
     }
 

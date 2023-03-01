@@ -16,7 +16,6 @@ public class EriDialogue: MonoBehaviour
     //[TextArea(3, 10)]
     // Start is called before the first frame update
 
-  
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -70,10 +69,8 @@ public class EriDialogue: MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
-
-   
-
 
 }
