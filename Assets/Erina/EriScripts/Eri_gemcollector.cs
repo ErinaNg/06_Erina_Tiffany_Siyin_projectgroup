@@ -95,6 +95,7 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         bgmSound.Stop();
         // finishing game
         currentState = gamestate.gameover;
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         GameWinSound.Play();
         GameWinUI.SetActive(true);
@@ -109,7 +110,9 @@ public class Eri_gemcollector : MonoBehaviour , IPointerClickHandler
         GameLoseSound.Play();
         currentState = gamestate.gameover;
         GameOverUI.SetActive(true);
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+       
     }
 
     private void OnTriggerEnter(Collider other)
