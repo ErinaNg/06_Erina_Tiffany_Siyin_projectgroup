@@ -21,6 +21,7 @@ public class Eri_malechara : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
     }

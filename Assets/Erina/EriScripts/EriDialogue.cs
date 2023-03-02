@@ -69,7 +69,12 @@ public class EriDialogue: MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            if(SceneManager.GetActiveScene().name == "Lvl1")
+            {
+                Cursor.visible = false;
+            }
         }
     }
 

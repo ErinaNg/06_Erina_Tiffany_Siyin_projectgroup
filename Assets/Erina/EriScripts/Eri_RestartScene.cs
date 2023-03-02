@@ -40,6 +40,7 @@ public class Eri_RestartScene : MonoBehaviour //pause game
     {
         AudioListener.pause = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         playAudio();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -48,6 +49,7 @@ public class Eri_RestartScene : MonoBehaviour //pause game
 
     void Pause()
     {
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         pauseMenuUI.SetActive(true); 
         Time.timeScale = 0f; //freeze 
@@ -77,6 +79,7 @@ public class Eri_RestartScene : MonoBehaviour //pause game
 
     public void AfterDialogueGoNextScene()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene("Lvl1");
     }
 

@@ -961,7 +961,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2053622484}
         m_MethodName: QuitMenu
         m_Mode: 1
         m_Arguments:
@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2053622484}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
